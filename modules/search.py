@@ -176,7 +176,7 @@ def musicbrainz_api(entity_type, query):
 
 def newton_api(operation, expression):
     expression = web.quote(expression, safe='')
-    uri = "https://newton.now.sh/{}/{}".format(operation, expression)
+    uri = "https://newton.now.sh/api/v2/{}/{}".format(operation, expression)
     bytes = web.get(uri)
     json = web.json(bytes)
     if 'result' in json:
