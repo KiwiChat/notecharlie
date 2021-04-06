@@ -29,7 +29,7 @@ class TestHead(unittest.TestCase):
         self.assertEqual(out, '404')
 
     def test_header(self):
-        input = Mock(group=lambda x: 'https://vtluug.org Server')
+        input = Mock(group=lambda x: 'https://www.wuvt.vt.edu Server')
         head(self.phenny, input)
 
         self.phenny.say.assert_called_once_with("Server: nginx")
