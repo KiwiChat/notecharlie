@@ -17,7 +17,7 @@ NS = '{http://www.dsml.org/DSML}'
 def search(query):
     query = web.quote(query)
     try:
-        r = web.get(SEARCH_URL.format(query), verify=False)
+        r = web.get(SEARCH_URL.format(query))
     except (web.ConnectionError, web.HTTPError):
         raise GrumbleError("THE INTERNET IS FUCKING BROKEN. Please try again later.")
 
