@@ -6,7 +6,7 @@ author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 import re
 import unittest
 from mock import MagicMock, Mock
-from modules.head import head, snarfuri
+from modules.head import head
 
 class TestHead(unittest.TestCase):
     def setUp(self):
@@ -40,21 +40,3 @@ class TestHead(unittest.TestCase):
 
         self.phenny.say.assert_called_once_with("There was no truncatedcone "\
                 "header in the response.")
-
-    def test_snarfuri(self):
-        self.phenny.config.prefix = '.'
-        self.phenny.config.linx_api_key = ""
-        input = Mock(group=lambda x=0: 'https://www.google.com',
-                sender='#phenny')
-        snarfuri(self.phenny, input)
-
-        self.phenny.msg.assert_called_once_with('#phenny', "[ Google ]")
-
-    def test_snarfuri_405(self):
-        self.phenny.config.prefix = '.'
-        self.phenny.config.linx_api_key = ""
-        input = Mock(group=lambda x=0: 'http://ozuma.sakura.ne.jp/httpstatus/405',
-                sender='#phenny')
-        snarfuri(self.phenny, input)
-
-        self.assertEqual(self.phenny.msg.called, False)
