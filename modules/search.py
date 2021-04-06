@@ -177,10 +177,14 @@ def musicbrainz_api(entity_type, query):
 def newton_api(operation, expression):
     expression = web.quote(expression, safe='')
     uri = "https://newton.now.sh/api/v2/{}/{}".format(operation, expression)
-    bytes = web.get(uri)
-    json = web.json(bytes)
-    if 'result' in json:
-        return str(json['result'])
+    try:
+        bytes = web.get(uri)
+    except web.HTTPError:
+        return None
+    else:
+        json = web.json(bytes)
+        if 'result' in json:
+            return str(json['result'])
     return None
 
 def search(phenny, input): 
