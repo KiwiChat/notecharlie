@@ -1,5 +1,4 @@
 lxml
 mock
-nose
 requests
 ago

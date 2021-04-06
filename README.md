@@ -28,8 +28,8 @@ Alternately, you can use the provided Dockerfile.
 Enjoy!
 
 ## Testing
-You will need the Python3 versions of `python-nose` and `python-mock`. To run
-the tests, simply run `nosetests3`.
+You will need the Python3 versions of `python-pytest` and `python-mock`. To run
+the tests, simply run `pytest`.
 
 ## Authors
 * Sean B. Palmer, http://inamidst.com/sbp/
