@@ -46,13 +46,13 @@ class TestArchwiki(unittest.TestCase):
 
     def test_awik_fragment(self):
         self.term = "KVM"
-        self.section = "Kernel support"
+        self.section = "Checking support for KVM"
         self.prepare()
 
         archwiki.awik(self.phenny, self.input)
         out = self.phenny.say.call_args[0][0]
 
-        self.keywords = ['kernel', 'modules', 'KVM', 'VIRTIO']
+        self.keywords = ['virtual', 'machine', 'KVM', 'VT-x']
         self.check_snippet(out)
 
     def test_awik_invalid(self):
