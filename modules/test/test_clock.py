@@ -58,6 +58,7 @@ class TestClock(unittest.TestCase):
 
         self.phenny.say.assert_called_with('Yes! PARTAI!')
 
+    @unittest.skip("tycho.usno.navy.mil is currently down")
     def test_tock(self):
         tock(self.phenny, None)
 
