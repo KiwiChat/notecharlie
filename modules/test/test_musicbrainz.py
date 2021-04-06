@@ -25,12 +25,11 @@ class TestMusicBrainz(unittest.TestCase):
 
         self.phenny.say.assert_called_once_with("Queen, Group (UK rock group) : https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3")
 
-    @unittest.skip("release search is failing for some unknown reason")
     def test_mb_release(self):
         input = Mock(group=lambda x: "release The Dark Side Of The Moon")
         mb(self.phenny, input)
 
-        self.phenny.say.assert_called_once_with("The Dark Side of the Moon: https://musicbrainz.org/release/69b9086b-de1b-35d7-b805-ad99b052d536")
+        self.phenny.say.assert_called_once_with("The Dark Side of the Moon: https://musicbrainz.org/release/b84ee12a-09ef-421b-82de-0441a926375b")
 
     def test_mb_release_group(self):
         input = Mock(group=lambda x: "release-group 808s & Heartbreak")
