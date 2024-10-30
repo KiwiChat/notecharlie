@@ -30,13 +30,13 @@ def check_python_version():
 def create_default_config(fn):
     f = open(fn, 'w')
     print(trim("""\
-    nick = 'phenny'
-    host = 'irc.example.net'
+    nick = 'iBoT'
+    host = 'irc.kiwichat.eu.org'
     port = 6667
     ssl = False
     ipv6 = False
-    channels = ['#example', '#test']
-    owner = 'yournickname'
+    channels = ['#ShowChat', '#Spania']
+    owner = 'BaiatRau'
 
     # password is the NickServ password, serverpass is the server password
     # password = 'example'
@@ -157,7 +157,7 @@ def main(argv=None):
 
         defaults = {
             'prefix': r'\.',
-            'name': 'Phenny Palmersbot, http://inamidst.com/phenny/',
+            'name': 'ShowChat iBoT',
             'port': 6667,
             'ssl': False,
             'ca_certs': None,
